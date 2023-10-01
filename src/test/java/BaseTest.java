@@ -1,11 +1,13 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
 
+
 import java.time.Duration;
 
 public class BaseTest {
-
     HomePage homePage;
+    AccountPage accountPage;
+
     ChromeDriver driver;
     public ChromeDriver openBrowser()
     {
@@ -22,5 +24,8 @@ public class BaseTest {
     {
         driver = openBrowser();
         homePage = new HomePage(driver);
+        accountPage = new AccountPage(driver);
     }
+
+
 }

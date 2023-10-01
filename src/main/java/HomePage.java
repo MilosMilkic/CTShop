@@ -9,6 +9,9 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//button[normalize-space()='Prihvatam']")
     WebElement cookiesButton;
 
+    @FindBy(linkText = "Otvori nalog")
+    WebElement openAccount;
+
     public HomePage(ChromeDriver driver)
     {
         this.driver = driver;
@@ -16,4 +19,8 @@ public class HomePage extends BasePage{
     }
 
     public void acceptCookies() {cookiesButton.click();}
+
+    public void clickOpenAccount() {openAccount.click();}
+
+
 }
