@@ -11,6 +11,8 @@ public class HomePage extends BasePage{
 
     @FindBy(linkText = "Otvori nalog")
     WebElement openAccount;
+    @FindBy(linkText = "Prijavi se")
+    WebElement login;
 
     public HomePage(ChromeDriver driver)
     {
@@ -21,6 +23,7 @@ public class HomePage extends BasePage{
     public void acceptCookies() {cookiesButton.click();}
 
     public void clickOpenAccount() {openAccount.click();}
+    public void clickLogin() {login.click();}
 
 
 }
