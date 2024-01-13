@@ -1,7 +1,6 @@
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class AccountPage extends BasePage{
@@ -53,10 +52,8 @@ public class AccountPage extends BasePage{
     @FindBy(className = "alert-success")
     WebElement success;
 
-    public AccountPage(ChromeDriver driver)
-    {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public AccountPage(WebDriver driver) {
+        super(driver);
     }
 
     public void setFirstName(String name) {firstName.sendKeys(name);}
@@ -69,7 +66,7 @@ public class AccountPage extends BasePage{
     public void unsubscribeNews() {subscribedNews.click();}
     public void selectLegalEntityYes()
     {
-        Select select =new Select(legalEntity);
+        Select select = new Select(legalEntity);
         select.selectByVisibleText("Da");
     }
     public void setTaxID(String pib) {taxID.sendKeys(pib);}
