@@ -1,8 +1,8 @@
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
 
 public class HomePage extends BasePage{
 
@@ -20,8 +20,6 @@ public class HomePage extends BasePage{
     WebElement resetButton;
     @FindBy(id = "search-submit-header")
     WebElement searchButton;
-    @FindBy(css = ".sharkskin-breadcrumb .active")
-    WebElement info;
     @FindBy(xpath = "//*[@id=\"products-list\"]/div[1]/div/div[2]/h4/a")
     WebElement lenovoProduct;
     @FindBy(xpath = "//*[@id=\"products-list\"]/div[3]/div/div[2]/h4/a")
@@ -29,10 +27,8 @@ public class HomePage extends BasePage{
     @FindBy(css = ".product-name h1")
     WebElement productInfo;
 
-    public HomePage(ChromeDriver driver)
-    {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public HomePage(WebDriver driver){
+        super(driver);
     }
 
     public void acceptCookies() {cookiesButton.click();}
@@ -43,7 +39,6 @@ public class HomePage extends BasePage{
     public String inputInfo(){return input.getText();}
     public void removeInput(){resetButton.click();}
     public void clickSearch(){searchButton.click();}
-    public String searchResults(){return info.getText();}
     public void clickLenovo(){lenovoProduct.click();}
     public String productName(){return productInfo.getText();}
     public void clickSamsung(){ samsungProduct.click();}

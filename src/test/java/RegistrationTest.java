@@ -1,4 +1,3 @@
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,8 +15,10 @@ public class RegistrationTest extends BaseTest{
         accountPage.setConfirmPassword("blackPearl");
         accountPage.uncheckRememberMe();
         accountPage.unsubscribeNews();
-//        accountPage.clickSubmit();
-//        Assert.assertEquals(driver.getCurrentUrl(), "https://www.ctshop.rs/customer/account/login", "after click submit,the app takes you to the login page");
+//      accountPage.clickSubmit();
+//      Assert.assertEquals(driver.getCurrentUrl(), "https://www.ctshop.rs/customer/account/login", "after click submit,the app takes you to the login page");
+
+//      These data are just examples; tests were executed with valid data.
     }
 
     @Test
